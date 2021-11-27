@@ -1,1 +1,1 @@
-CS50 Web programming with python and javascirpt lecture 7 source code
+CS50's Web Programming with Python and JavaScript lecture 7 source code
