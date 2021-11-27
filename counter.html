@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <title>Counter</title>
-        <script>
-            let counter = 0
-            function count() {
-                counter++; //this means take the old value of counter and increment it by 1 (counter += 1 in python; counter = counter + 1)
-                alert(counter)
+
+<head>
+    <title>Counter</title>
+    <script>
+        let counter = 0
+        function count() {
+            counter++; //this means take the old value of counter and increment it by 1 (counter += 1 in python; counter = counter + 1)
+            document.querySelector('h1').innerHTML = counter
+
+            if (counter % 10 === 0) {
+                alert(`Count is now ${counter}`) // this is a literal template where value of attribute plugs in -> `${}`
             }
-        </script>
-    </head>
-    <body>
-        <h1>Hello!</h1>
-        <button onclick="count()">Count</button>
-    </body>
+            // Separate HTML from JavaScript to make code easily readable
+            
+            // when the content of DOM will be fully loaded anonymous function will be run which is using property
+            // if we will not use this way error will be shown on web-site JavaScript terminal  
+            document.addEventListener('DOMDContentLoaded', function () {
+                document.querySelector('button').onclick = count
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <h1>0</h1>
+    <button>Count</button>
+</body>
+
 </html>
