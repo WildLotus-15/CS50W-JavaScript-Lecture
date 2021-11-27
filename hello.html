@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <title>Hello</title>
-        <script>
-            function hello() {
-                // to structure code better we can store specific query in the variable like a number or a string
-                let heading = document.querySelector('h1')
-                if (heading === 'Hello!') {
-                    heading.innerHTML = "Goodbye!"
-                } else {
-                    heading.innerHTML = "Hello!"
-                }
-                // alert('Hello, world!')
-                //document.querySelector('h1').innerHTML = "Goodbye"
+
+<head>
+    <title>Hello</title>
+    <script>
+        function hello() {
+            // to structure code better we can store specific query in the variable like a number or a string
+            const heading = document.querySelector('h1')
+            // to create variable that will not change and always will stay the same we can use const syntax if thus requirements are not necessary let syntax can be used
+            // triple equality marks strictness it means that values must be equal besides that they must be same type (string to string; number to number e.t.c)
+            if (heading === 'Hello!') {
+                heading.innerHTML = "Goodbye!"
+            } else {
+                heading.innerHTML = "Hello!"
             }
-        </script>
-    </head>
-    <body>
-        <h1>Hello!</h1>
-        <button onclick="hello()">Click here</button>
-    </body>
+            /* alert('Hello, world!')
+               document.querySelector('h1').innerHTML = "Goodbye"
+            */
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Hello!</h1>
+    <button onclick="hello()">Click here</button>
+</body>
+
 </html>
