@@ -4,10 +4,12 @@
         <title>Hello</title>
         <script>
             function hello() {
-                if (document.querySelector('h1').innerHTML === 'Hello!') {
-                    document.querySelector('h1').innerHTML = "Goodbye!"
+                // to structure code better we can store specific query in the variable like a number or a string
+                let heading = document.querySelector('h1')
+                if (heading === 'Hello!') {
+                    heading.innerHTML = "Goodbye!"
                 } else {
-                    document.querySelector('h1').innerHTML = "Hello!"
+                    heading.innerHTML = "Hello!"
                 }
                 // alert('Hello, world!')
                 //document.querySelector('h1').innerHTML = "Goodbye"
