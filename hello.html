@@ -18,12 +18,16 @@
                document.querySelector('h1').innerHTML = "Goodbye"
             */
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('button').onclick = hello
+        })
     </script>
 </head>
 
 <body>
     <h1>Hello!</h1>
-    <button onclick="hello()">Click here</button>
+    <button>Click here</button>
 </body>
 
 </html>
