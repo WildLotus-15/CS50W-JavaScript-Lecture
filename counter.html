@@ -13,13 +13,13 @@
                 alert(`Count is now ${counter}`) // this is a literal template where value of attribute plugs in -> `${}`
             }
             // Separate HTML from JavaScript to make code easily readable
-            
+
             // when the content of DOM will be fully loaded anonymous function will be run which is using property
             // if we will run function before loading DOMContent error will be shown on web-site JavaScript terminal   
-            document.addEventListener('DOMDContentLoaded', function () {
-                document.querySelector('button').onclick = count
-            })
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('button').onclick = count
+        })
     </script>
 </head>
 
