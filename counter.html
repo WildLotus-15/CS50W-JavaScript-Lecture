@@ -14,8 +14,8 @@
             }
             // Separate HTML from JavaScript to make code easily readable
             
-            // when the content of DOM will be fully loaded anonymous function will be run which is using property
-            // if we will run function before loading DOMContent error will be shown on web-site JavaScript terminal   
+            // when the content of DOM will be fully loaded anonymous function will be run 
+            // if we will run this function before loading DOMContent error will be shown on web-site JavaScript terminal   
             document.addEventListener('DOMDContentLoaded', function () {
                 document.querySelector('button').onclick = count
             })
