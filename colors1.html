@@ -1,0 +1,29 @@
+<!-- Modified & Upgraded colors.html file -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Color</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // document query selector selects first and only one query
+            // to select all elements that matches particular query we can use document query selector all
+            document.querySelectorAll('button').forEach(function (button) {
+                button.onclick = function () {
+                    document.querySelector('#hello').style.color = button.dataset.color
+                }
+            }) /* This selects all the buttons & forEach is a function which takes as an argument another function which runs for each element in an array*/
+        })
+    </script>
+</head>
+
+<body>
+    <!-- data- provided with some word means that we are going to attach that type of data information in relationship to that specific tag  -->
+    <!-- In that case we are going to change the color when the button is clicked on -->
+    <h1 id="hello">Hello!</h1>
+    <button data-color='red'>Red</button>
+    <button data-color="blue">Blue</button>
+    <button data-color="green">Green</button>
+</body>
+
+</html>
