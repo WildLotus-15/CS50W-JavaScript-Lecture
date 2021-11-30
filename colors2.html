@@ -9,8 +9,8 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('select').onchange = function () {
-                /* syntax "this"'s meaning is based on the specific context in JavaScript but when it's being 
-                used after particularevent it corressponds to thing that recieved event' */
+                /* syntax this's meaning is based on the specific context in JavaScript 
+                but when it's being used after event it refers to a thing that recieved the event' */
                 document.querySelector('h1').style.color = this.value
             }
         })
