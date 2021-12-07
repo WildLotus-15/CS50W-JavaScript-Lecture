@@ -4,7 +4,6 @@
 // the ! syntax means "not" in that case if local storage can't get counter item because it doesn't exist
 
 /* let counter = 0 */
-
 if (!localStorage.getItem('counter')) {
     localStorage.setItem('counter', 0)
 }
