@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Currency Exchange</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            document.querySelector('form').onsubmit = function () {
+                fetch('http://api.exchangeratesapi.io/v1/latest?access_key=b60e0b11cde20d910dd46d13aba5d590&symbols=USD,AUD,CAD,PLN,MXN&format=1')
+                    .then(response => response.json())
+                    // if the function is simple which is only taking and returning something we can use shorthand which is shown on the line above without using curly braces or return syntax
+                    .then(data => {
+                        const currency = document.querySelector('#currency').value
+                        // console.log(data)  // this will show the output of data on the web-site JS console
+                        const rate = data.rates[currency]
+                        if (rate !== undefined) {
+                            document.querySelector('#result').innerHTML = `1 EUR is equal to ${rate.toFixed(3)} ${currency}`
+                        } else {
+                            document.querySelector('#result').innerHTML = 'Invalid currency.'
+                        }
+                        // toFixed is a argument which takes a number of how many decimal points will be shown 
+                    })
+
+                return false;
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Base currency is EUR</h1>
+    <form>
+        <input id="currency" placeholder="Currency" type="text">
+        <input type="submit" value="Convert">
+    </form>
+    <!-- this is where the result will be plugged in while doing currency convertion -->
+    <div id="result">
+
+    </div>
+</body>
+
+</html>

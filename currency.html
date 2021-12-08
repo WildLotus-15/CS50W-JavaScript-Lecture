@@ -8,7 +8,7 @@
                 .then(response => response.json())
                 // if the function is simple which is only taking and returning something we can use shorthand which is shown on the line above without using curly braces or return syntax
                 .then(data => {
-                    // console.log(data)  // this will show the output of data on the web-site JS console
+                    console.log(data)  // this will show the output of data on the web-site JS console
                     const rate = data.rates.USD
                     document.querySelector('body').innerHTML = `1 EUR is equal to ${rate.toFixed(3)} USD`
                     // toFixed is a argument which takes a number of how many decimal points will be shown 
