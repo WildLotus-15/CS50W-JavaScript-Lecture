@@ -11,7 +11,7 @@
                     .then(response => response.json())
                     // if the function is simple which is only taking and returning something we can use shorthand which is shown on the line above without using curly braces or return syntax
                     .then(data => {
-                        const currency = document.querySelector('#currency').value
+                        const currency = document.querySelector('#currency').value.toUpperCase() // this is a JS function which takes a string and capitalizes every letter of it
                         // console.log(data)  // this will show the output of data on the web-site JS console
                         const rate = data.rates[currency]
                         if (rate !== undefined) {
@@ -21,6 +21,12 @@
                         }
                         // toFixed is a argument which takes a number of how many decimal points will be shown 
                     })
+                    .catch(error => {
+                        console.log('Error:', error)
+                    })
+                    // the last case is catch case which basicallly means what should web-site do when something goes wrong
+                    // in this case the error will be catched & shown in the JS console
+                    // the benefit of this method is that if something will crash it will crash in a predictable way
 
                 return false;
             }
