@@ -4,7 +4,7 @@
 <head>
     <title>Currency Exchange</title>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function () { 
 
             document.querySelector('form').onsubmit = function () {
                 fetch('http://api.exchangeratesapi.io/v1/latest?access_key=b60e0b11cde20d910dd46d13aba5d590&symbols=USD,AUD,CAD,PLN,MXN&format=1')
@@ -14,6 +14,7 @@
                         const currency = document.querySelector('#currency').value.toUpperCase() // this is a JS function which takes a string and capitalizes every letter of it
                         // console.log(data)  // this will show the output of data on the web-site JS console
                         const rate = data.rates[currency]
+                        // In this case square brackets are used because we are pointing on a variable and comparing it to existing rates, based on a condition following logic will be executed: 
                         if (rate !== undefined) {
                             document.querySelector('#result').innerHTML = `1 EUR is equal to ${rate.toFixed(3)} ${currency}`
                         } else {
@@ -42,7 +43,8 @@
     </form>
     <!-- this is where the result will be plugged in while doing currency convertion -->
     <div id="result">
-
+    </div> 
+    <div id="rates">
     </div>
 </body>
 
